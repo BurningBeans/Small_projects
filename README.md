@@ -10,5 +10,5 @@
 # [自動填寫問卷](q)
 把元智大學的問卷用新分頁打開  
 將此javascript程式碼貼到瀏覽器的console中即可填完問卷
-#[Portal自動登入](portal.py)
+# [Portal自動登入](portal.py)
 如標題
