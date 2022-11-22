@@ -43,7 +43,7 @@ def getLecHour(text):
     else:
         return text.split('-')
 
-def fuckDotNet(r):
+def fDotNet(r):
     global data
     soup = bs(r.text)
     target = ["__EVENTTARGET", "__EVENTARGUMENT", "__LASTFOCUS", "__VIEWSTATE", "__VIEWSTATEGENERATOR", "__EVENTVALIDATION"]
@@ -115,7 +115,7 @@ def getContent(req, url, headers, data):
         data['DDL_YM'] = "109,2  "
         data['DDL_Dept'] = i
         data['DDL_Degree'] = "1"
-        fuckDotNet(req.post(url, headers=headers, data=data))
+        fDotNet(req.post(url, headers=headers, data=data))
         sleep(randint(1, 5) * 0.1)
         data['Q'] = "RadioButton1"
         data['DDL_YM'] = "109,2  "
@@ -123,13 +123,13 @@ def getContent(req, url, headers, data):
         data['DDL_Degree'] = "0"
         data['Button1'] = "%E7%A2%BA%E5%AE%9A"
         r = req.post(url, headers=headers, data=data)
-        fuckDotNet(r)
+        fDotNet(r)
         getCosChart(i, r.text)
 
 if __name__ == '__main__':
     main = requests.Session()
 
-    fuckDotNet(main.get(URL, headers=headers))
+    fDotNet(main.get(URL, headers=headers))
     deplistPath = abspath("deptlist")
     if (not exists(deplistPath) or not isfile(deplistPath)):
         getDeptList()
